@@ -1,0 +1,36 @@
+.wrapper {
+  width: 260px;
+  padding: 10px;
+  float: left;
+  display: flex;
+}
+.a {
+  width: 80%;
+  height: 150px;
+}
+.b {
+  width: 20%;
+  height: 150px;
+}
+.main {
+  border: 1px solidrgb(124, 119, 119);
+}
+.main-left {
+  float: left;
+  border-right: 1px solid rgb(124, 119, 119);
+  width: 400px;
+  padding: 20px;
+}
+.main-right {
+  float: left;
+
+  padding: 20px;
+}
+.clear {
+  clear: both;
+  overflow: auto;
+  border: 1px solid rgb(124, 119, 119);
+}
+img {
+  width: 20px;
+}

@@ -1,0 +1,47 @@
+<div class="container">
+  <h1 mat-dialog-title>Set Office Hierarchy</h1>
+  <hr />
+  <div mat-dialog-content>
+    <div [formGroup]="orgGroup">
+      <div
+        class="row"
+        formArrayName="orgHeirarchy"
+        *ngFor="let contact of heirarchy.controls; let i = index"
+      >
+        <div class="col-md-10" [formGroupName]="i">
+          <label class="p-2">Level {{ i + 1 }}</label>
+          <input
+            type="text"
+            class="form-control example-full-width"
+            formControlName="info"
+          />
+        </div>
+        <div class="col-md-2 mt-3">
+          <button class="btn btn-danger mt-4" (click)="delete(i)">X</button>
+        </div>
+      </div>
+    </div>
+    <div>
+      <button
+        type="button"
+        (click)="addNewHeirarchy()"
+        class="btn btn-primary mt-2 m-2"
+      >
+        Add New
+      </button>
+    </div>
+    <hr />
+    <div>
+      <button
+        (click)="submitContact(heirarchy.value)"
+        class="btn btn-primary custom-btn m-2"
+        [disabled]="!orgGroup.valid"
+      >
+        Save
+      </button>
+      <button (click)="closeDailog()" class="btn btn-danger custom-btn m-2">
+        Cancel
+      </button>
+    </div>
+  </div>
+</div>

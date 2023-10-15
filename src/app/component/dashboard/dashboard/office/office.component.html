@@ -1,0 +1,27 @@
+<div class="clear">
+  <div
+    class="wrapper"
+    *ngFor="let item of data; let last = last; let index = index"
+  >
+    <div class="a">
+      <div>Level-{{ index + 1 }}</div>
+      <div class="border p-5 text-center bg-light">{{ item.info }}</div>
+    </div>
+    <div class="b mt-5 p-2" *ngIf="!last">
+      <img
+        class="mt-3"
+        src="./../../../../../assets/image/iconmonstr-arrow-right-thin.svg"
+      />
+    </div>
+  </div>
+</div>
+
+<div class="body">
+  <div class="main clear">
+    <div class="main-left">Action</div>
+    <div class="main-right" (click)="openDailog($event)">
+      <img src="../../../../../assets/image/edit-button.svg" />
+    </div>
+    <div></div>
+  </div>
+</div>

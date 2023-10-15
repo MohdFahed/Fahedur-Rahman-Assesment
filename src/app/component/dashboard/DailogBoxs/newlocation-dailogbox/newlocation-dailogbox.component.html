@@ -1,0 +1,56 @@
+<div class="container-fluid mt-4">
+  <div class="example-form" [formGroup]="newForm">
+    <div class="mt-4">
+      <label>Select Level</label>
+      <select
+        class="form-control"
+        formControlName="country"
+        [ngClass]="{
+          'is-invalid': formSubmit && formStatus['country'].errors
+        }"
+      >
+        <option *ngFor="let item of data" [value]="item.info">
+          {{ item.info }}
+        </option>
+      </select>
+      <p
+        *ngIf="formSubmit && newForm.get('country').hasError('required')"
+        class="text-danger"
+      >
+        Country Name is Required!
+      </p>
+    </div>
+    <div class="mt-4">
+      <label>Office Name (Level)</label>
+      <input
+        type="text"
+        class="form-control example-full-width"
+        formControlName="officeName"
+        [ngClass]="{
+          'is-invalid': formSubmit && formStatus['officeName'].errors
+        }"
+      />
+      <p
+        *ngIf="formSubmit && newForm.get('officeName').hasError('required')"
+        class="text-danger"
+      >
+        Office Name is Required!
+      </p>
+    </div>
+    <div class="mt-4">
+      <label for="exampleFormControlTextarea1" class="form-label"
+        >Address</label
+      >
+      <textarea
+        class="form-control"
+        id="exampleFormControlTextarea1"
+        rows="3"
+        formControlName="address"
+      ></textarea>
+    </div>
+    <div class="m-4">
+      <button class="btn btn-primary m-4" (click)="add()">Add</button>
+      <button class="btn btn-primary m-4" (click)="cancel()">Cancel</button>
+    </div>
+  </div>
+</div>

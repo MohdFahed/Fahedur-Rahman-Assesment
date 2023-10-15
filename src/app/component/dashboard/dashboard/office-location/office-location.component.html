@@ -1,0 +1,44 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-12 clearfix">
+      <button class="btn btn-primary float-end" (click)="addNewLocation()">
+        Add new
+      </button>
+    </div>
+  </div>
+  <div class="row mt-2">
+    <div class="col-md-12">
+      <table class="table">
+        <thead class="thead-dark bg-light">
+          <tr>
+            <th scope="col">Country</th>
+            <th scope="col">State</th>
+            <th scope="col">City</th>
+            <th scope="col">Area</th>
+            <th scope="col">Sub area</th>
+            <th scope="col">Address</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let item of data; let index = index">
+          <tr>
+            <td>{{ item.country }}</td>
+            <td>{{ item.state }}</td>
+            <td>{{ item.city }}</td>
+            <td>{{ item.area }}</td>
+            <td>{{ item.subarea }}</td>
+            <td>{{ item.address }}</td>
+            <td>
+              <span (click)="editAddress(index)"
+                ><img src="./../../../../../assets/image/edit.svg" /></span
+              >/
+              <span (click)="deleteAddress(index)"
+                ><img src="./../../../../../assets/image/delete.svg"
+              /></span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

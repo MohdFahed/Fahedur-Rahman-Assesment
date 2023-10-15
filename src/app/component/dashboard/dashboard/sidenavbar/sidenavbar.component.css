@@ -1,0 +1,21 @@
+nav {
+  height: 100vh;
+  margin: 0;
+}
+nav a {
+  padding: 20px;
+  color: black;
+  margin: 0;
+}
+.active {
+  border-radius: 10px;
+  border: 1px solid black;
+}
+a {
+  padding: 10px;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  margin-top: 20px;
+}

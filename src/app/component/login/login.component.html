@@ -1,0 +1,54 @@
+<div class="container-fluid mt-5">
+  <div class="col-md-4 offset-md-4" [formGroup]="loginGroup">
+    <div class="mb-3">
+      <label for="email" class="form-label">Email address</label>
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        formControlName="email"
+        [ngClass]="{ 'is-invalid': formSubmit && formStatus['email'].errors }"
+      />
+
+      <div
+        *ngIf="formSubmit && formStatus['email'].errors"
+        class="invalid-feedback"
+      >
+        <div *ngIf="formSubmit && formStatus['email'].errors['required']">
+          Email is required
+        </div>
+        <div *ngIf="formSubmit && formStatus['email'].errors['email']">
+          Email is Invalid
+        </div>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        id="password"
+        formControlName="password"
+        [ngClass]="{
+          'is-invalid': formSubmit && formStatus['password'].errors
+        }"
+      />
+      <div
+        *ngIf="formSubmit && formStatus['password'].errors"
+        class="invalid-feedback"
+      >
+        <div *ngIf="formSubmit && formStatus['password'].errors['required']">
+          Password is required
+        </div>
+      </div>
+    </div>
+    <div class="mb-3">
+      <button type="submit" class="btn btn-primary" (click)="loginForm()">
+        Login
+      </button>
+    </div>
+    <div class="mb-3">
+      <a href="#">Forget Password ?</a>
+    </div>
+  </div>
+</div>
